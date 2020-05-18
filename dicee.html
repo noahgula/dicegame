@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Refresh Me</h1>
+        <p class="winner" id="winner">Player 1 Wins</p>
+        <div class="dice">
+            <p>Player 1</p>
+            <img class="img1" id="dice1" src="images/dice6.png">
+        </div>
+
+        <div class="dice">
+            <p>Player 2</p>
+            <img class="img2" id="dice2" src="images/dice6.png">
+
+        </div>
+
+    </div>
+
+    <script>
+        var dicenum = Math.floor(Math.random() * 6 + 1);
+        var newSrc = "images/dice" + dicenum + ".png";
+        document.getElementById('dice1').src = newSrc;
+
+
+        var dicenum2 = Math.floor(Math.random() * 6 + 1);
+        var newSrc = "images/dice" + dicenum2 + ".png";
+        document.getElementById('dice2').src = newSrc;
+
+        if (dicenum > dicenum2) {
+            document.getElementById('winner').innerHTML = "Player1 wins"
+        } else {
+            document.getElementById('winner').innerHTML = "Player2 wins"
+
+        }
+        if (dicenum == dicenum2) {
+            document.getElementById('winner').innerHTML = "Tied"
+        }
+    </script>
+</body>
+
+<footer>
+    www 🎲 company 🎲 com
+</footer>
+
+</html>
